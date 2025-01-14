@@ -12,13 +12,42 @@
         This is a box!
     </div>
     <form>
-        <label for="destination">Choose a destination</label>
+        <label for="pickup">Choose a pickup</label>
+    <select id="pickup" name="pickup">
+        <option value="leicester">Leicester</option>
+        <option value="hull">Hull</option>
+        <option value="nottingham">Nottingham</option>
+       </select> 
+    
+       <label for="destination">Choose a destination</label>
     <select id="destination" name="destination">
         <option value="leicester">Leicester</option>
         <option value="hull">Hull</option>
         <option value="nottingham">Nottingham</option>
-        <option value="date">Date</option>
-    </select> 
+       </select> 
+
+       <label for="when">Choose a when</label>
+    <select id="when" name="when">
+        <option value="now">Now</option>
+        <option value="scheduled">Scheduled</option>
+        <option value="tomorrow">Tomorrow</option>
+       </select>
+       
+       <label for="price">price</label>
+    <select id="price" name="price">
+        <option value="£5">£5</option>
+        <option value="£35">£35</option>
+        <option value="£54">£54</option>
+       </select> 
+
+       <div class="box">
+
+
+       </div>
+       <action="#">
+        <label for="user-input">Enter amount:</label><br>
+        <input type="text" id="user-input" class="input-box" placeholder="Type here...">
+    </form>
     </form>
 </body>
 </html>
