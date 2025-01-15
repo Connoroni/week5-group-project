@@ -19,3 +19,10 @@ app.listen(8080, () => {
 app.get("/", (req, res) => {
   res.json("Test on root");
 });
+
+app.get("/retrieve", async (req, res) => {
+  const query = await db.query(`SELECT * FROM routes`);
+  await res.json(query.rows);
+  const jsonData = query.rows;
+  console.log(jsonData);
+});
