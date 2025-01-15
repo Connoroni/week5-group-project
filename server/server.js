@@ -24,12 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/retrieve", async (req, res) => {
-  try {
-    const query = await db.query(`SELECT * FROM routes`);
-    res.json(query.rows);
-    console.log(query.rows);
-  } catch (error) {
-    console.error("Query failed :(", error);
-    res.status(500).json({ error: "Server error" });
-  }
+  const query = await db.query(`SELECT * FROM routes`);
+  res.json(query.rows);
+  console.log(query.rows);
 });

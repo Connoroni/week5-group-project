@@ -11,6 +11,9 @@ locationForm.addEventListener("submit", (event) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ userData }),
+    body: JSON.stringify(formObject),
   });
+  //Make text appear that says "Calculating Price..." for a few seconds then fetch the data from the database (via the server) and have a new form appear with an <input type="number" name="actual_price" id="actual_price input" value=`objectFetchedFromSelectQuery.rec_price`/>
 });
+
+//In the server.js we need to make the query `SELECT rec_price FROM routes WHERE pickup = $1 AND dropoff = $2`, [req.body.formObject.pickup, req.body.formObject.dropoff]
