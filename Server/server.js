@@ -21,8 +21,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/retrieve", async (req, res) => {
-  const query = await db.query(`SELECT * FROM routes`);
-  await res.json(query.rows);
+  const query = await db.query(`SELECT startpoint FROM routes`);
+  console.log(query);
+  res.json(query.rows);
   const jsonData = query.rows;
   console.log(jsonData);
 });
