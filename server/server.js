@@ -24,12 +24,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/retrieve", async (req, res) => {
-  try {
-    const query = await db.query(`SELECT * FROM routes`);
-    res.json(query.rows);
-    console.log(query.rows);
-  } catch (error) {
-    console.error("Query failed :(", error);
-    res.status(500).json({ error: "Server error" });
-  }
+  const data = req.body.formObject;
+  console.log("Data within request body:", data);
+  const query = await db.query(
+    `SELECT rec_price FROM routes WHERE pickup = $1 AND dropoff =$2`,
+    [data.pickup, data.dropoff]
+  );
+  res.json(query.rows);
+  console.log(query.rows);
 });
