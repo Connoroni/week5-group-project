@@ -1,5 +1,7 @@
 const priceDiv = document.getElementById("price-div");
+priceDiv.style.display = "none";
 const driverDiv = document.getElementById("driver-div");
+driverDiv.style.display = "none";
 
 const locationForm = document.getElementById("flexfare");
 // console.log(locationForm);
@@ -28,13 +30,15 @@ locationForm.addEventListener("submit", async (event) => {
 });
 
 function renderPrice() {
+  priceDiv.style.display = "flex";
   priceDiv.innerHTML = `<form id="priceForm"
   <label>Enter your offer here: £</label>
-  <input type="number" name="actual_price" id="actual_price_input" value="1000000000" placeholder="Enter your offer here"/> <button type="submit">Send offer</button> 
+  <input type="number" name="actual_price" id="actual_price_input" value="50" placeholder="Enter your offer here"/> <button type="submit">Send offer</button> 
   </form>`;
   const priceForm = document.getElementById("priceForm");
   priceForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    driverDiv.style.display = "flex";
     driverDiv.innerHTML = `
     <h2>3 Drivers Available</h2>
     <div class="driver">
