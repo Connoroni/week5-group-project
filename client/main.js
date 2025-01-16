@@ -23,15 +23,31 @@ locationForm.addEventListener("submit", async (event) => {
   document.body.appendChild(calculateText);
   setTimeout(() => {
     calculateText.style.display = "none";
-    priceDiv.innerHTML = `<form 
-    <label>Enter your offer here: £</label>
-    <input type="number" name="actual_price" id="actual_price_input" value="1000000000" placeholder="Enter your offer here"/> <button type="submit">Send offer</button> 
-    </form>`;
-    // const rec_price = document.createElement("form");
-    // rec_price.type = "number";
-    // rec_price.name = "actual_price";
-    // rec_price.id = "actual_price_input";
-    // rec_price.value = "5";
-    // priceDiv.appendChild(rec_price);
+    renderPrice();
   }, 2000);
 });
+
+function renderPrice() {
+  priceDiv.innerHTML = `<form id="priceForm"
+  <label>Enter your offer here: £</label>
+  <input type="number" name="actual_price" id="actual_price_input" value="1000000000" placeholder="Enter your offer here"/> <button type="submit">Send offer</button> 
+  </form>`;
+  const priceForm = document.getElementById("priceForm");
+  priceForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    driverDiv.innerHTML = `
+    <h2>3 Drivers Available</h2>
+    <div class="driver">
+      <p class="driver-name">Driver 1</p>
+      <p class="driver-status">Pending</p>
+    </div>
+    <div class="driver">
+      <p class="driver-name">Driver 2</p>
+      <p class="driver-status">Rejected</p>
+    </div>
+    <div class="driver">
+      <p class="driver-name">Driver 1</p>
+      <p class="driver-status">Accepted offer</p>
+    </div>`;
+  });
+}
