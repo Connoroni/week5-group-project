@@ -9,7 +9,10 @@ app.use(cors());
 dotenv.config();
 
 export const db = new pg.Pool({
-  connectionString: process.env.DATABASE_URI,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 app.listen(8080, () => {
@@ -22,7 +25,6 @@ app.get("/", (req, res) => {
 
 app.get("/retrieve", async (req, res) => {
   const query = await db.query(`SELECT * FROM routes`);
-  await res.json(query.rows);
-  const jsonData = query.rows;
-  console.log(jsonData);
+  res.json(query.rows);
+  console.log(query.rows);
 });
