@@ -1,6 +1,6 @@
 import express from "express";
-import cors from "cors";
 import pg from "pg";
+import cors from "cors";
 import dotenv from "dotenv";
 
 const app = express();
@@ -23,13 +23,15 @@ app.get("/", (req, res) => {
   res.json("Test on root");
 });
 
-app.get("/retrieve", async (req, res) => {
-  const data = req.body.formObject;
+app.post("/retrieve", async (req, res) => {
+  const data = req.body;
   console.log("Data within request body:", data);
   const query = await db.query(
     `SELECT rec_price FROM routes WHERE pickup = $1 AND dropoff =$2`,
-    [data.pickup, data.dropoff]
+    [data.pickup, data.destination]
   );
-  res.json(query.rows);
+  await res.json(query.rows);
   console.log(query.rows);
 });
+
+// app.get("/retrieve", async (req, res) => {});
