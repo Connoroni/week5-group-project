@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="main.js" defer></script>
     <title>FlexFare</title>
+
 </head>
 
 <body>
@@ -16,28 +18,28 @@
         
     </div>
     <form id="flexfare">
-        <label for="pickup">Choose a pickup</label>
-    <select id="pickup" name="pickup">
+      <label for="pickup">Choose a pickup</label>
+      <select id="pickup" name="pickup">
         <option value="leicester">Leicester</option>
         <option value="hull">Hull</option>
         <option value="nottingham">Nottingham</option>
-       </select> 
-    
-       <label for="destination">Choose a destination</label>
-    <select id="destination" name="destination">
-        <option value="leicester">Leicester</option>
-        <option value="hull">Hull</option>
-        <option value="nottingham">Nottingham</option>
-       </select> 
+      </select>
 
-       <label for="when">Choose a when</label>
-    <select id="when" name="when">
+      <label for="destination">Choose a destination</label>
+      <select id="destination" name="destination">
+        <option value="leicester">Leicester</option>
+        <option value="hull">Hull</option>
+        <option value="nottingham">Nottingham</option>
+      </select>
+
+      <label for="when">Choose a time</label>
+      <select id="when" name="when">
         <option value="now">Now</option>
         <option value="scheduled">Scheduled</option>
         <option value="tomorrow">Tomorrow</option>
-       </select>
-       
-       <label for=" recommended price">Recommended price</label>
+      </select>
+
+      <!-- <label for="recommended price">Recommended price</label>
     <select id="recommended price" name="recommended price">
         <option value="£50">£5</option>
         <option value="£35">£35</option>
@@ -46,8 +48,10 @@
        </select>
        </div>
         <label for="user-input">Enter flex amount:</label><br>
-        <input type="text" id="user-input" class="input-box" placeholder="Type here...">
-        <button type="submit">Submit</button>
+        <input type="text" id="user-input" class="input-box" placeholder="Type here...">  -->
+      <button type="submit">Submit</button>
     </form>
-</body>
+    <div id="price-div"></div>
+    <div id="driver-div"></div>
+  </body>
 </html>
