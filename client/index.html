@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>FlexFare</title>
 </head>
 <h1>FlexFare</h1>
@@ -10,9 +11,9 @@
     
     <p> Flexible Fares on the Go!</p>
     <div class="box">
-        This is suppose to be the box for the App!
+        Logo here?
     </div>
-    <form>
+    <form id="flexfare">
         <label for="pickup">Choose a pickup</label>
     <select id="pickup" name="pickup">
         <option value="leicester">Leicester</option>
@@ -39,17 +40,12 @@
         <option value="£50">£5</option>
         <option value="£35">£35</option>
         <option value="£54">£54</option>
-        <option> value="£60">£60</option>
-       </select> 
-
-       <div class="box">
-
-
+        <option value="£60">£60</option>
+       </select>
        </div>
-       
         <label for="user-input">Enter flex amount:</label><br>
         <input type="text" id="user-input" class="input-box" placeholder="Type here...">
-    </form>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
