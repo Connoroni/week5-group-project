@@ -11,13 +11,16 @@ locationForm.addEventListener("submit", async (event) => {
   const formData = new FormData(locationForm);
   const formObject = Object.fromEntries(formData);
   console.log("FORM OBJECT:", formObject);
-  const result = await fetch("http://localhost:8080/retrieve", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formObject),
-  });
+  const result = await fetch(
+    "https://week5-group-project-server.onrender.com/retrieve",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formObject),
+    }
+  );
   const jsonResult = await result.json();
   console.log("JSON RESULT:", jsonResult[0]);
   const calculateText = document.createElement("h1");
